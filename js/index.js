@@ -41,7 +41,20 @@ function handleforward(){
 const $progress = document.querySelector('#progress')
 $video.addEventListener('loadedmetadata',handleProgress) /*El loadedmetadata es un evento que indica que toda la metadata de un elemetno ya se cargo*/
 $video.addEventListener('timeupdate',handleTimeUpdate) /*El loadedmetadata es un evento que indica que toda la metadata de un elemetno ya se cargo*/
+$video.addEvenetListener('click',handleVideoPlay)/*Para cuando se de click en el video se reprodusca o pause */
 
+function handleVideoPlay(){
+    if($video.paused = true){
+        $video.play()
+        $play.hidden = true //hace que cuando se ejecute la accion uno se oculte y el otro aparezca
+        $pause.hidden = false //En JS los atributos de HTML son propiedades  
+    }
+    if($video.paused = false){
+        $video.pause()
+        $pause.hidden = true
+        $play.hidden = false //hace que cuando se ejecute la accion uno se oculte y el otro aparezca
+    }
+}
 function handleProgress(){
     $progress.max = $video.duration
     /*indica que el atributo max de la etiqueta progress sera igual a la duracion del video*/
