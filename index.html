@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/styles.css">
+    <title>Video Player</title>
+</head>
+<body>
+    <div class="wraper"> <!--Contendor padre que controla el size del video-->
+        <div class="player">
+            <video id="video" poster="./assets/images/poster.jpg"  src="./assets/videos/lofi.mp4" width="400"></video> 
+            <!--AUTOPLAY is for play automatically the video 
+            and MUTED do the video doesn't have sound by default,
+            but if the tag CONTROLS is avaliable we can unmute the video
+            WITDTH is "ancho" and set the width of the frame-->
+            <div class="overlay">
+                <h2 class="player-title">Lofi Hip Hop</h2>
+                <div class="player-buttons"> 
+    
+                    <!--buttons for control the video-->
+                    <button class="button" id="backward" aria-label="-10 Seg" title="-10 Seg"></button>
+                    <button class="button" id="play" aria-label="Play" title="Play"></button>
+                    <button class="button" hidden id="pause" aria-label="Pause" title="Pause"></button> <!--Por defecto no se ve la pausa-->
+                    <button class="button" id="forward" aria-label="+10 Seg" title="+10 Seg"></button>
+            
+                </div>
+                <div class="player-progress">
+                    <input id="progress" type="range" value="0" min="0" step="1">
+                    <!--range es para que la entrada sea un rango
+                    value es el valor inicial que va a tomar
+                    min es el valor minimo que puede tomar
+                    y step los los saltos que puede dar cuando se mueva
+                    el valor maximo que es el tiempo del video se toma por js-->
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./js/index.js"> </script>
+</body>
+</html> 
